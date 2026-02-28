@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: employee-management-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
+    startCommand: gunicorn employee_management.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: PYTHON_VERSION
+        value: 3.11.6
+      - key: DATABASE_URL
+        fromDatabase:
+          name: employee_db
+          property: connectionString
+
+databases:
+  - name: employee_db
+    databaseName: employee_db
+    user: employee_user
+    plan: free
