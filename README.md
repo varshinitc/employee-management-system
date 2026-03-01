@@ -1,4 +1,4 @@
-<img width="1436" height="808" alt="Untitled 4" src="https://github.com/user-attachments/assets/e02fffc5-4745-4ee9-97ca-fa0c99b96349" /># Employee Management System
+Employee Management System
 
 ## Quick Start
 
@@ -27,6 +27,12 @@ npm run dev
 - Role-based access (Admin/Employee)
 - CRUD operations
 - Protected routes
+
+- ADMIN CREDENTIALS:
+  email: admin@example.com
+  password: admin123 
+
+
 
 
 Screenshots of the final output – Add Readme File
